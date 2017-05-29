@@ -1,0 +1,285 @@
+hash: 92c6a7529f6173b65273033fe8bb323e1f222f8a620f901cc724af5d1cdee690
+updated: 2017-05-29T12:32:10.829732339-07:00
+imports:
+- name: appscode.com/ark
+  version: 3f587ae91fbea05d2d52c2c03a715f9bc062dc90
+  repo: git@diffusion.appscode.com:appscode/43/appscode.git
+  vcs: git
+  subpackages:
+  - pkg/contexts/env
+  - pkg/system
+- name: cloud.google.com/go
+  version: fe3d41e1ecb2ce36ad3a979037c9b9a2b726226f
+  subpackages:
+  - compute/metadata
+  - internal
+- name: github.com/appscode/api
+  version: 6ccfba7540c2c013dd596d4955c4a9a5ab8b0812
+  subpackages:
+  - dtypes
+  - kubernetes/v1beta1
+- name: github.com/appscode/errors
+  version: 748883e321a9f99fe901bd2663c7af3fcae43ea4
+- name: github.com/appscode/go
+  version: 04abd631dc552c01c9448db0763611932590cbc4
+  subpackages:
+  - crypto/rand
+  - encoding/json/types
+  - encoding/yaml
+  - env
+  - flags
+  - net
+  - net/httpclient
+  - os/repos
+  - os/script
+  - pongo2
+  - strings
+  - version
+- name: github.com/appscode/go-dns
+  version: 3af047d24824ddfcc5d6b985e9454446a736de46
+  subpackages:
+  - aws
+  - azure
+  - cloudflare
+  - digitalocean
+  - googlecloud
+  - linode
+  - provider
+  - vultr
+- name: github.com/appscode/go-notify
+  version: b56c335311b82247e828ccdc8516621abc230b45
+  subpackages:
+  - mailgun
+  - smtp
+- name: github.com/appscode/log
+  version: 68e0e42e42c01371f3950571fc87c2298a51dd8f
+  subpackages:
+  - golog
+- name: github.com/aws/aws-sdk-go
+  version: 63ce630574a5ec05ecd8e8de5cea16332a5a684d
+  subpackages:
+  - aws
+  - aws/awserr
+  - aws/awsutil
+  - aws/client
+  - aws/client/metadata
+  - aws/corehandlers
+  - aws/credentials
+  - aws/credentials/ec2rolecreds
+  - aws/credentials/endpointcreds
+  - aws/credentials/stscreds
+  - aws/defaults
+  - aws/ec2metadata
+  - aws/endpoints
+  - aws/request
+  - aws/session
+  - aws/signer/v4
+  - private/protocol
+  - private/protocol/query
+  - private/protocol/query/queryutil
+  - private/protocol/rest
+  - private/protocol/restxml
+  - private/protocol/xml/xmlutil
+  - private/waiter
+  - service/route53
+  - service/sts
+- name: github.com/Azure/azure-sdk-for-go
+  version: 0984e0641ae43b89283223034574d6465be93bf4
+  subpackages:
+  - arm/dns
+- name: github.com/Azure/go-autorest
+  version: d7c034a8af24eda120dd6460bfcd6d9ed14e43ca
+  subpackages:
+  - autorest
+  - autorest/azure
+  - autorest/date
+  - autorest/to
+  - autorest/validation
+- name: github.com/cenkalti/backoff
+  version: 32cd0c5b3aef12c76ed64aaf678f6c79736be7dc
+- name: github.com/cloudflare/cloudflare-go
+  version: ba610b87e64f5e99e8ddd614e50669c66c2ec9b5
+- name: github.com/codegangsta/inject
+  version: 33e0aa1cb7c019ccc3fbe049a8262a6403d30504
+- name: github.com/codeskyblue/go-sh
+  version: b097669b1569203c3ce05a6b8717d43140fdb3d5
+- name: github.com/dgrijalva/jwt-go
+  version: 9ed569b5d1ac936e6494082958d63a6aa4fff99a
+- name: github.com/digitalocean/godo
+  version: 1bbce1028c89b0a3ee2061f04b3da6c5d75129d1
+  subpackages:
+  - context
+- name: github.com/facebookgo/stack
+  version: d9d227395bc3d7a635388c75b2e3b3a750e11888
+- name: github.com/flosch/pongo2
+  version: 1d0f0d3af150c4a65dfd424d742f7374819e7d29
+- name: github.com/ghodss/yaml
+  version: 73d445a93680fa1a78ae23a5839bad48f32ba1ee
+- name: github.com/go-ini/ini
+  version: 6e4869b434bd001f6983749881c7ead3545887d8
+- name: github.com/golang/glog
+  version: 44145f04b68cf362d9c4df2182967c2275eaefed
+- name: github.com/golang/protobuf
+  version: 8ee79997227bf9b34611aee7946ae64735e6fd93
+  subpackages:
+  - jsonpb
+  - proto
+  - protoc-gen-go/descriptor
+  - ptypes/any
+- name: github.com/google/go-querystring
+  version: 547ef5ac979778feb2f760cdb5f4eae1a2207b86
+  subpackages:
+  - query
+- name: github.com/grpc-ecosystem/grpc-gateway
+  version: e40837d7cc3a3e454c1e42012704e92bd49310af
+  repo: https://github.com/appscode/grpc-gateway.git
+  vcs: git
+  subpackages:
+  - runtime
+  - runtime/internal
+  - third_party/appscodeapis/appscode/api
+  - utilities
+- name: github.com/inconshreveable/mousetrap
+  version: 76626ae9c91c4f2a10f34cad8ce83ea42c93bb75
+- name: github.com/JamesClonk/vultr
+  version: d1ca9b7e9284f7f18d38d82f65c35e87225a2791
+  subpackages:
+  - lib
+- name: github.com/jaytaylor/html2text
+  version: 52d9b785554a1918cb09909b89a1509a98b853fd
+- name: github.com/jmespath/go-jmespath
+  version: bd40a432e4c76585ef6b72d3fd96fb9b6dc7b68d
+- name: github.com/juju/errors
+  version: 8234c829496aaeae67c5c71235a2cbcc289e960a
+- name: github.com/juju/ratelimit
+  version: 77ed1c8a01217656d2080ad51981f6e99adaa177
+- name: github.com/kelseyhightower/envconfig
+  version: 9aca109c9aec4633fced9717c4a09ecab3d33111
+- name: github.com/mailgun/mailgun-go
+  version: 369a1fa57ce6fb314e627087b9fff0db5c266c0f
+- name: github.com/mgutz/str
+  version: 968bf66e3da857419e4f6e71b2d5c9ae95682dc4
+- name: github.com/miekg/dns
+  version: 5d001d020961ae1c184f9f8152fdc73810481677
+- name: github.com/pkg/errors
+  version: a22138067af1c4942683050411a841ade67fe1eb
+- name: github.com/spf13/cobra
+  version: 9c28e4bbd74e5c3ed7aacbc552b2cab7cfdfe744
+- name: github.com/spf13/pflag
+  version: c7e63cf4530bcd3ba943729cee0efeff2ebea63f
+- name: github.com/tent/http-link-go
+  version: ac974c61c2f990f4115b119354b5e0b47550e888
+- name: github.com/timewasted/linode
+  version: 37e84520dcf74488f67654f9c775b9752c232dc1
+  subpackages:
+  - dns
+- name: github.com/xeipuuv/gojsonpointer
+  version: e0fe6f68307607d540ed8eac07a342c33fa1b54a
+- name: github.com/xeipuuv/gojsonreference
+  version: e02fc20de94c78484cd5ffb007f8af96be030a45
+- name: github.com/xeipuuv/gojsonschema
+  version: 93e72a773fade158921402d6a24c819b48aba29d
+- name: github.com/xenolf/lego
+  version: 5ee956d6ca4ffbd8b940fc3ecb6e109c99d9a68a
+  repo: git@github.com:appscode/lego.git
+  vcs: git
+  subpackages:
+  - acme
+- name: github.com/zabawaba99/fireauth
+  version: 9c20262c4e4e482b73c59ce4efd601ca15fd9645
+- name: golang.org/x/crypto
+  version: 84e98f45760e87786b7f24603b8166a6fa09811d
+  subpackages:
+  - ocsp
+- name: golang.org/x/net
+  version: da118f7b8e5954f39d0d2130ab35d4bf0e3cb344
+  subpackages:
+  - context
+  - context/ctxhttp
+  - html
+  - html/atom
+  - http2
+  - http2/hpack
+  - idna
+  - internal/timeseries
+  - lex/httplex
+  - publicsuffix
+  - trace
+- name: golang.org/x/oauth2
+  version: d5040cddfc0da40b408c9a1da4728662435176a9
+  subpackages:
+  - google
+  - internal
+  - jws
+  - jwt
+- name: golang.org/x/text
+  version: 470f45bf29f4147d6fbd7dfd0a02a848e49f5bf4
+  subpackages:
+  - secure/bidirule
+  - transform
+  - unicode/bidi
+  - unicode/norm
+- name: google.golang.org/api
+  version: 55146ba61254fdb1c26d65ff3c04bc1611ad73fb
+  subpackages:
+  - dns/v1
+  - gensupport
+  - googleapi
+  - googleapi/internal/uritemplates
+- name: google.golang.org/appengine
+  version: 150dc57a1b433e64154302bdc40b6bb8aefa313a
+  subpackages:
+  - internal
+  - internal/app_identity
+  - internal/base
+  - internal/datastore
+  - internal/log
+  - internal/modules
+  - internal/remote_api
+  - internal/urlfetch
+  - urlfetch
+- name: google.golang.org/genproto
+  version: d80a6e20e776b0b17a324d0ba1ab50a39c8e8944
+  subpackages:
+  - googleapis/api/annotations
+  - googleapis/rpc/status
+- name: google.golang.org/grpc
+  version: d2e1b51f33ff8c5e4a15560ff049d200e83726c5
+  subpackages:
+  - codes
+  - credentials
+  - grpclb/grpc_lb_v1
+  - grpclog
+  - internal
+  - keepalive
+  - metadata
+  - naming
+  - peer
+  - stats
+  - status
+  - tap
+  - transport
+- name: gopkg.in/alexcesaro/quotedprintable.v3
+  version: 2caba252f4dc53eaf6b553000885530023f54623
+- name: gopkg.in/gomail.v2
+  version: 81ebce5c23dfd25c6c67194b37d3dd3f338c98b1
+- name: gopkg.in/square/go-jose.v1
+  version: aa2e30fdd1fe9dd3394119af66451ae790d50e0d
+  subpackages:
+  - cipher
+  - json
+- name: gopkg.in/yaml.v2
+  version: a5b47d31c556af34a302ce5d659e6fea44d90de0
+testImports:
+- name: github.com/davecgh/go-spew
+  version: 5215b55f46b2b919f50a1df0eaa5886afe4e3b3d
+  subpackages:
+  - spew
+- name: github.com/pmezard/go-difflib
+  version: 792786c7400a136282c1664665ae0a8db921c6c2
+  subpackages:
+  - difflib
+- name: github.com/stretchr/testify
+  version: 69483b4bd14f5845b5a1e55bca19e954e827f1d0
+  subpackages:
+  - assert

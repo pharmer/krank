@@ -1,0 +1,27 @@
+package: appscode.com/krank
+import:
+- package: appscode.com/ark
+  repo: git@diffusion.appscode.com:appscode/43/appscode.git
+  vcs: git
+  version: master
+- package: github.com/appscode/api
+  version: master
+- package: github.com/appscode/errors
+  version: v2
+- package: github.com/appscode/go
+  version: master
+- package: github.com/appscode/log
+  version: master
+- package: github.com/codeskyblue/go-sh
+- package: github.com/flosch/pongo2
+  version: master
+- package: github.com/ghodss/yaml
+- package: github.com/go-ini/ini
+- package: github.com/golang/protobuf
+  version: 8ee79997227bf9b34611aee7946ae64735e6fd93
+- package: github.com/mgutz/str
+  version: v1.2.0
+- package: github.com/spf13/cobra
+testImport:
+- package: github.com/stretchr/testify
+  version: v1.1.4

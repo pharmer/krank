@@ -1,0 +1,17 @@
+**/bin
+**/build
+**/dist
+*.DS_Store
+*.idea
+*.iml
+**/*.db
+conf/*
+!conf/defaults.ini
+!conf/seed.json
+!conf/versions-demo.json
+node_modules
+.vscode
+**/*.pyc
+kluster.json
+!hack/populate.sh
+**/tuf.log
