@@ -150,6 +150,7 @@ def build_cmd(name):
 
 def build_cmds():
     gen()
+    fmt()
     for name in libbuild.BIN_MATRIX.keys():
         build_cmd(name)
 
@@ -159,6 +160,7 @@ def build(name=None):
         cfg = libbuild.BIN_MATRIX[name]
         if cfg['type'] == 'go':
             gen()
+            fmt()
             build_cmd(name)
     else:
         build_cmds()
@@ -411,7 +413,6 @@ def delete_kubectl(version):
 
 def default():
     gen()
-    # gen_protos()
     fmt()
     die(call('GO15VENDOREXPERIMENT=1 ' + libbuild.GOC + ' install ./pkg/... ./cmd/...'))
 
