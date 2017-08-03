@@ -9,8 +9,8 @@ import (
 	"os"
 	"strings"
 
-	"appscode.com/ark/pkg/contexts/env"
-	"appscode.com/krank/pkg/provider/extpoints"
+	"github.com/appscode/pharmer/pkg/contexts/env"
+	"github.com/appscode/krank/pkg/provider/extpoints"
 	api "github.com/appscode/api/kubernetes/v1beta1"
 	"github.com/appscode/log"
 	"github.com/golang/protobuf/jsonpb"

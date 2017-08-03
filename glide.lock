@@ -1,7 +1,7 @@
 hash: 92c6a7529f6173b65273033fe8bb323e1f222f8a620f901cc724af5d1cdee690
 updated: 2017-05-29T12:32:10.829732339-07:00
 imports:
-- name: appscode.com/ark
+- name: github.com/appscode/pharmer
   version: 3f587ae91fbea05d2d52c2c03a715f9bc062dc90
   repo: git@diffusion.appscode.com:appscode/43/appscode.git
   vcs: git

@@ -1,7 +1,7 @@
 package extpoints
 
 import (
-	"appscode.com/ark/pkg/contexts/env"
+	"github.com/appscode/pharmer/pkg/contexts/env"
 )
 
 type KubeStarter interface {

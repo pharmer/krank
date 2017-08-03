@@ -4,7 +4,7 @@ import (
 	"os/user"
 	"time"
 
-	"appscode.com/ark/pkg/system"
+	"github.com/appscode/pharmer/pkg/system"
 	"github.com/appscode/errors"
 	"github.com/appscode/go/crypto/rand"
 	. "github.com/appscode/go/encoding/json/types"

@@ -4,14 +4,14 @@ package main
 import (
 	"os"
 
-	"appscode.com/krank/pkg/cmd"
-	_ "appscode.com/krank/pkg/provider/aws"
-	_ "appscode.com/krank/pkg/provider/azure"
-	_ "appscode.com/krank/pkg/provider/digitalocean"
-	_ "appscode.com/krank/pkg/provider/gce"
-	_ "appscode.com/krank/pkg/provider/generic"
-	_ "appscode.com/krank/pkg/provider/linode"
-	_ "appscode.com/krank/pkg/provider/packet"
+	"github.com/appscode/krank/pkg/cmd"
+	_ "github.com/appscode/krank/pkg/provider/aws"
+	_ "github.com/appscode/krank/pkg/provider/azure"
+	_ "github.com/appscode/krank/pkg/provider/digitalocean"
+	_ "github.com/appscode/krank/pkg/provider/gce"
+	_ "github.com/appscode/krank/pkg/provider/generic"
+	_ "github.com/appscode/krank/pkg/provider/linode"
+	_ "github.com/appscode/krank/pkg/provider/packet"
 	v "github.com/appscode/go/version"
 	logs "github.com/appscode/log/golog"
 )

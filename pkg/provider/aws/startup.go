@@ -8,9 +8,9 @@ import (
 	"strings"
 	"time"
 
-	"appscode.com/ark/pkg/contexts/env"
-	"appscode.com/krank/pkg/provider"
-	"appscode.com/krank/pkg/provider/extpoints"
+	"github.com/appscode/pharmer/pkg/contexts/env"
+	"github.com/appscode/krank/pkg/provider"
+	"github.com/appscode/krank/pkg/provider/extpoints"
 	"github.com/appscode/errors"
 	"github.com/appscode/go/net/httpclient"
 	"github.com/appscode/go/os/script"

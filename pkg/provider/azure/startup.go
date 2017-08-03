@@ -5,10 +5,10 @@ import (
 	"io/ioutil"
 	"path/filepath"
 
-	"appscode.com/ark/pkg/contexts/env"
-	"appscode.com/krank/pkg/provider"
-	"appscode.com/krank/pkg/provider/extpoints"
 	"github.com/appscode/go/os/script"
+	"github.com/appscode/krank/pkg/provider"
+	"github.com/appscode/krank/pkg/provider/extpoints"
+	"github.com/appscode/pharmer/pkg/contexts/env"
 )
 
 func init() {

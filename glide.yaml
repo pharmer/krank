@@ -1,6 +1,6 @@
-package: appscode.com/krank
+package: github.com/appscode/krank
 import:
-- package: appscode.com/ark
+- package: github.com/appscode/pharmer
   repo: git@diffusion.appscode.com:appscode/43/appscode.git
   vcs: git
   version: master

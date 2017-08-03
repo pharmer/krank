@@ -12,9 +12,9 @@ import (
 	"strings"
 	"time"
 
-	"appscode.com/ark/pkg/contexts/env"
-	"appscode.com/ark/pkg/system"
-	"appscode.com/krank/pkg/templates"
+	"github.com/appscode/pharmer/pkg/contexts/env"
+	"github.com/appscode/pharmer/pkg/system"
+	"github.com/appscode/krank/pkg/templates"
 	api "github.com/appscode/api/kubernetes/v1beta1"
 	"github.com/appscode/errors"
 	"github.com/appscode/go/crypto/rand"
