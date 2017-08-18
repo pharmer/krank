@@ -1,0 +1,34 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: krank
+  labels:
+    app: krank
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: krank
+    spec:
+      containers:
+        - image: appscode/krank:canary
+          name: krank
+          ports:
+            - containerPort: 9844
+              name: web
+              protocol: TCP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: krank
+  labels:
+    app: krank
+spec:
+  ports:
+  - port: 9844
+    protocol: TCP
+    targetPort: web
+  selector:
+    app: krank
