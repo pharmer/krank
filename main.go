@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/appscode/krank/cloud"
+	//"github.com/appscode/krank/cloud"
 	"github.com/golang/glog"
 	"github.com/spf13/pflag"
 	"k8s.io/apiserver/pkg/server/healthz"
@@ -17,6 +17,7 @@ import (
 	_ "k8s.io/kubernetes/pkg/cloudprovider/providers"
 	_ "k8s.io/kubernetes/pkg/version/prometheus" // for version metric registration
 	"k8s.io/kubernetes/pkg/version/verflag"
+	"github.com/appscode/krank/cloud/providers/digitalocean"
 )
 
 func init() {
@@ -33,7 +34,7 @@ func main() {
 
 	verflag.PrintAndExitIfRequested()
 
-	cloud, err := cloudprovider.InitCloudProvider(cloud.ProviderName, s.CloudConfigFile)
+	cloud, err := cloudprovider.InitCloudProvider(digitalocean.ProviderName, s.CloudConfigFile)
 	if err != nil {
 		glog.Fatalf("Cloud provider could not be initialized: %v", err)
 	}
