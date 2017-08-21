@@ -3,8 +3,8 @@ package main
 import (
 	"fmt"
 	"os"
-
 	//"github.com/appscode/krank/cloud"
+	"github.com/appscode/krank/cloud/providers/digitalocean"
 	"github.com/golang/glog"
 	"github.com/spf13/pflag"
 	"k8s.io/apiserver/pkg/server/healthz"
@@ -17,7 +17,6 @@ import (
 	_ "k8s.io/kubernetes/pkg/cloudprovider/providers"
 	_ "k8s.io/kubernetes/pkg/version/prometheus" // for version metric registration
 	"k8s.io/kubernetes/pkg/version/verflag"
-	"github.com/appscode/krank/cloud/providers/digitalocean"
 )
 
 func init() {
