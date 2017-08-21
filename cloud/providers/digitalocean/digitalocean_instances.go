@@ -2,11 +2,9 @@ package digitalocean
 
 import (
 	"k8s.io/apimachinery/pkg/types"
-	"k8s.io/client-go/pkg/api/v1"
+	"k8s.io/kubernetes/pkg/api/v1"
 	//netutil "github.com/appscode/go/net"
 	"context"
-	"io/ioutil"
-	"net/http"
 	"strconv"
 
 	"github.com/digitalocean/godo"
@@ -14,7 +12,7 @@ import (
 	"k8s.io/kubernetes/pkg/cloudprovider"
 )
 
-func (d *DO) NodeAddress(name types.NodeName) ([]v1.NodeAddress, error) {
+func (d *DO) NodeAddresses(name types.NodeName) ([]v1.NodeAddress, error) {
 	droplet, err := d.getDroplet(name)
 	if err != nil {
 		return []v1.NodeAddress{}, err
@@ -109,14 +107,4 @@ func (d *DO) getDropletByID(providerID string) (*godo.Droplet, error) {
 		return &godo.Droplet{}, err
 	}
 	return droplet, nil
-}
-func fetchExternalIP() (string, error) {
-	resp, err := http.Get(instanceInfoURL + "/interfaces/public/0/ipv4/address")
-	if err != nil {
-		return "", err
-	}
-	defer resp.Body.Close()
-
-	body, err := ioutil.ReadAll(resp.Body)
-	return string(body), err
 }

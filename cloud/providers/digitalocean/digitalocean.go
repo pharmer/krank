@@ -12,7 +12,7 @@ import (
 )
 
 const (
-	ProviderName = "gce"
+	ProviderName = "digitalocean"
 )
 
 type Config struct {
