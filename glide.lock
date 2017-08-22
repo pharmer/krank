@@ -1,8 +1,8 @@
-hash: b385d5e259e7be917fc77b29e17e791e529263347e9d3abb56c01e1e8455df21
-updated: 2017-08-22T04:47:11.313649044-07:00
+hash: 6392de309efad033743cf22e32ffb853c9040b4077cde2eabdd2485fbe183402
+updated: 2017-08-22T07:32:51.820191983-07:00
 imports:
 - name: cloud.google.com/go
-  version: 3b1ae45394a234c385be014e9a488f2bb6eef821
+  version: fe3d41e1ecb2ce36ad3a979037c9b9a2b726226f
   subpackages:
   - compute/metadata
   - internal
@@ -31,6 +31,8 @@ imports:
   - version
 - name: github.com/appscode/log
   version: 68e0e42e42c01371f3950571fc87c2298a51dd8f
+  subpackages:
+  - golog
 - name: github.com/appscode/pharmer
   version: 4d82441e7b34bfbfa69468b11d4fefa133a12c2c
   subpackages:
@@ -61,26 +63,23 @@ imports:
   - private/protocol/query
   - private/protocol/query/queryutil
   - private/protocol/rest
-  - private/protocol/restxml
   - private/protocol/xml/xmlutil
   - private/waiter
   - service/autoscaling
   - service/ec2
   - service/ecr
   - service/elb
-  - service/route53
   - service/sts
 - name: github.com/Azure/azure-sdk-for-go
-  version: 786cc84138518bf7fd6d60e92fad1ac9d1a117ad
+  version: 2d49bb8f2cee530cc16f1f1a9f0aae763dee257d
   subpackages:
   - arm/compute
-  - arm/containerregistry
   - arm/disk
   - arm/network
   - arm/storage
   - storage
 - name: github.com/Azure/go-autorest
-  version: 58f6f26e200fa5dfb40c9cd1c83f3e2c860d779d
+  version: f6e08fe5e4d45c9a66e40196d3fed5f37331d224
   subpackages:
   - autorest
   - autorest/adal
@@ -195,7 +194,7 @@ imports:
 - name: github.com/google/gofuzz
   version: 44d81051d367757e1c7c6a5a86423ece9afcf63c
 - name: github.com/gophercloud/gophercloud
-  version: ce1e02c3ccfdb7fab257340dc4d603ec3035fa11
+  version: ed590d9afe113c6107cd60717b196155e6579e78
   subpackages:
   - openstack
   - openstack/blockstorage/v1/apiversions
@@ -279,6 +278,7 @@ imports:
   version: e7e903064f5e9eb5da98208bae10b475d4db0f8c
   subpackages:
   - prometheus
+  - prometheus/promhttp
 - name: github.com/prometheus/client_model
   version: fa8ad6fec33561be4280a8f0514318c79d7f6cb6
   subpackages:
@@ -385,18 +385,13 @@ imports:
 - name: github.com/zabawaba99/fireauth
   version: a96e4680fe079c9d29db732873742573c1d5b2be
 - name: golang.org/x/crypto
-  version: d172538b2cfce0c13cee31e647d0367aa8cd2486
+  version: 84e98f45760e87786b7f24603b8166a6fa09811d
   subpackages:
-  - bcrypt
-  - blowfish
   - curve25519
   - ed25519
   - ed25519/internal/edwards25519
-  - nacl/secretbox
   - pkcs12
   - pkcs12/internal/rc2
-  - poly1305
-  - salsa20/salsa
   - ssh
   - ssh/terminal
 - name: golang.org/x/net
@@ -421,6 +416,7 @@ imports:
   version: 8f0908ab3b2457e2e15403d3697c9ef5cb4b57a9
   subpackages:
   - unix
+  - windows
 - name: golang.org/x/text
   version: 470f45bf29f4147d6fbd7dfd0a02a848e49f5bf4
   subpackages:
@@ -438,17 +434,12 @@ imports:
 - name: google.golang.org/api
   version: e3824ed33c72bf7e81da0286772c34b987520914
   subpackages:
-  - cloudmonitoring/v2beta2
   - compute/v0.beta
   - compute/v1
   - container/v1
-  - dns/v1
   - gensupport
   - googleapi
   - googleapi/internal/uritemplates
-  - logging/v2beta1
-  - monitoring/v3
-  - pubsub/v1
 - name: google.golang.org/appengine
   version: 12d5545dc1cfa6047a286d5e853841b6471f4c19
   subpackages:
@@ -493,7 +484,7 @@ imports:
 - name: gopkg.in/warnings.v0
   version: 8a331561fe74dadba6edfc59f3be66c22c3b065d
 - name: gopkg.in/yaml.v2
-  version: 53feefa2559fb8dfa8d81baad31be332c97d6c77
+  version: eb3733d160e74a9c7e442f435eb3bea458e1d19f
 - name: k8s.io/apimachinery
   version: 1fd2e63a9a370677308a42f24fd40c86438afddf
   subpackages:
