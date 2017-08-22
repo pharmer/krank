@@ -1,18 +1,27 @@
-## krank
+## krank version
 
-Krank by Appscode - Start farms
+Prints binary version number.
 
 ### Synopsis
 
 
-Krank by Appscode - Start farms
+Prints binary version number.
+
+```
+krank version [flags]
+```
 
 ### Options
 
 ```
+  -h, --help   help for version
+```
+
+### Options inherited from parent commands
+
+```
       --alsologtostderr                         log to standard error as well as files
       --cloud-provider-gce-lb-src-cidrs cidrs   CIDRS opened in GCE firewall for LB traffic proxy & health checks (default 130.211.0.0/22,35.191.0.0/16,209.85.152.0/22,209.85.204.0/22)
-  -h, --help                                    help for krank
       --log-flush-frequency duration            Maximum number of seconds between log flushes (default 5s)
       --log_backtrace_at traceLocation          when logging hits line file:N, emit a stack trace (default :0)
       --log_dir string                          If non-empty, write log files in this directory
@@ -24,6 +33,5 @@ Krank by Appscode - Start farms
 ```
 
 ### SEE ALSO
-* [krank up](krank_up.md)	 - Bootstrap as a Kubernetes master or node
-* [krank version](krank_version.md)	 - Prints binary version number.
+* [krank](krank.md)	 - Krank by Appscode - Start farms
 
