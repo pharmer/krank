@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 	"os"
-	//"github.com/appscode/krank/cloud"
+
 	"github.com/appscode/krank/cloud/providers/digitalocean"
 	"github.com/golang/glog"
 	"github.com/spf13/pflag"
