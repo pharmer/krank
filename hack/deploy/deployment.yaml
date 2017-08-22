@@ -1,0 +1,133 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: krank
+  labels:
+    app: krank
+  namespace: kube-system
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: krank
+    spec:
+      nodeSelector:
+        node-role.kubernetes.io/master: ""
+      tolerations:
+      - key: "node-role.kubernetes.io/master"
+        operator: "Exists"
+        effect: "NoSchedule"
+      containers:
+        - image: appscode/krank:external
+          name: krank
+          args:
+          - --cloud-config=/srv/appscode/do.json
+          - --leader-elect=false
+          - --use-service-account-credentials=true
+          - --kubeconfig=/etc/kubernetes/controller-manager.conf
+          - --v=3
+          volumeMounts:
+          - mountPath: /etc/kubernetes
+            name: k8s
+          - name: cred
+            mountPath: /srv/appscode
+          ports:
+            - containerPort: 9844
+              name: web
+              protocol: TCP
+      volumes:
+      - name: cred
+        configMap:
+          name: krank-configmap
+      - name: k8s
+        hostPath:
+          path: /etc/kubernetes
+
+----------------------------
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: krank-configmap
+  namespace: kube-system
+data:
+  do.json:
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: krank
+  labels:
+    app: krank
+  namespace: kube-system
+spec:
+  ports:
+  - port: 9844
+    protocol: TCP
+    targetPort: web
+  selector:
+    app: krank
+
+----
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: cloud-controller-manager
+  namespace: kube-system
+spec:
+  hostNetwork: true
+  containers:
+  - name: cloud-controller-manager
+    image: appscode/krank:external
+    imagePullPolicy: Always
+    resources:
+      requests:
+        cpu: 200m
+    command:
+    - /usr/bin/krank
+    - --service-account-private-key-file=/etc/kubernetes/pki/sa.key
+    - --kubeconfig=/etc/kubernetes/controller-manager.conf
+    - --leader-elect=true
+    - --use-service-account-credentials=true
+    - --cloud-config=/srv/appscode/do.json
+    livenessProbe:
+      httpGet:
+        host: 127.0.0.1
+        path: /healthz
+        port: 10252
+        scheme: HTTP
+      initialDelaySeconds: 15
+      timeoutSeconds: 15
+    volumeMounts:
+    - name: srvkube
+      mountPath: /etc/kubernetes
+      readOnly: true
+    - name: logfile
+      mountPath: /var/log/cloud-controller-manager.log
+    - name: etcssl
+      mountPath: /etc/ssl
+      readOnly: true
+    - name: usrsharecacerts
+      mountPath: /usr/share/ca-certificates
+      readOnly: true
+    - name: cred
+      mountPath: /srv/appscode
+  volumes:
+  - name: srvkube
+    hostPath:
+      path: /etc/kubernetes
+  - name: logfile
+    hostPath:
+      path: /var/log/cloud-controller-manager.log
+  - name: etcssl
+    hostPath:
+      path: /etc/ssl
+  - name: usrsharecacerts
+    hostPath:
+      path: /usr/share/ca-certificates
+  - name: cred
+    configMap:
+      name: krank-configmap

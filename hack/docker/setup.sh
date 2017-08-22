@@ -38,7 +38,7 @@ build_binary() {
 
 build_docker() {
     pushd $GOPATH/src/github.com/appscode/krank/hack/docker
-    cp $DIST/krank/krank-alpine-amd64 krank
+    cp $DIST/krank/krank-linux-amd64 krank
     chmod 755 krank
 
     cat >Dockerfile <<EOL
@@ -49,10 +49,9 @@ RUN set -x \
 
 COPY krank /usr/bin/krank
 
-USER nobody:nobody
 ENTRYPOINT ["krank"]
 EOL
-    local cmd="docker build -t appscode/$IMG:$TAG ."
+    local cmd="sudo docker build -t appscode/$IMG:$TAG ."
     echo $cmd; $cmd
 
     rm krank Dockerfile

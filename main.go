@@ -34,6 +34,7 @@ func main() {
 	verflag.PrintAndExitIfRequested()
 
 	cloud, err := cloudprovider.InitCloudProvider(digitalocean.ProviderName, s.CloudConfigFile)
+	fmt.Println(s.CloudConfigFile, "----")
 	if err != nil {
 		glog.Fatalf("Cloud provider could not be initialized: %v", err)
 	}

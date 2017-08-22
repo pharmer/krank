@@ -1,7 +1,9 @@
 package digitalocean
 
 import (
+	"encoding/base64"
 	"encoding/json"
+	"fmt"
 	"io"
 	"io/ioutil"
 
@@ -37,6 +39,12 @@ func newDO(config io.Reader) (*DO, error) {
 	if err != nil {
 		return nil, err
 	}
+	fmt.Println(string(contents))
+	contents, err = base64.StdEncoding.DecodeString(string(contents))
+	if err != nil {
+		return nil, err
+	}
+	fmt.Println(string(contents))
 	err = json.Unmarshal(contents, &do)
 	if err != nil {
 		return nil, err
