@@ -5,11 +5,11 @@ import (
 	"io/ioutil"
 	"os"
 
+	"github.com/appscode/go/hold"
 	"github.com/spf13/cobra"
 	_ "k8s.io/kubernetes/pkg/client/metrics/prometheus" // for client metric registration
 	_ "k8s.io/kubernetes/pkg/cloudprovider/providers"
 	_ "k8s.io/kubernetes/pkg/version/prometheus" // for version metric registration
-	"github.com/appscode/go/hold"
 )
 
 func NewCmdDebug() *cobra.Command {

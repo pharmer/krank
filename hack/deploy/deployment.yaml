@@ -47,7 +47,7 @@ spec:
           name: krank
           args:
           - up
-          - --cloud-config=/etc/kubernetes/do.json
+          - --cloud-config=/etc/kubernetes/cloud-config
           - --cloud-provider=digitalocean
           - --v=3
           volumeMounts:
