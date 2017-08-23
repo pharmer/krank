@@ -45,7 +45,7 @@ build_docker() {
 FROM alpine
 
 RUN set -x \
-  && apk add --update --no-cache ca-certificates
+  && apk add --update --no-cache ca-certificates curl
 
 COPY krank /usr/bin/krank
 

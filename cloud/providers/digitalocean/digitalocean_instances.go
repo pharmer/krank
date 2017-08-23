@@ -22,6 +22,8 @@ func (d *DO) NodeAddresses(name types.NodeName) ([]v1.NodeAddress, error) {
 }
 
 func (d *DO) NodeAddressesByProviderID(providerID string) ([]v1.NodeAddress, error) {
+	return []v1.NodeAddress{}, errors.New("unimplemented:" + providerID)
+
 	droplet, err := d.getDropletByID(providerID)
 	if err != nil {
 		return []v1.NodeAddress{}, err
@@ -52,6 +54,7 @@ func (d *DO) InstanceType(nodeName types.NodeName) (string, error) {
 }
 
 func (d *DO) InstanceTypeByProviderID(providerID string) (string, error) {
+	return "", errors.New("unimplemented:" + providerID)
 	droplet, err := d.getDropletByID(providerID)
 	if err != nil {
 		return "", err
