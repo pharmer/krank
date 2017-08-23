@@ -14,6 +14,10 @@ import (
 	"k8s.io/kubernetes/pkg/cloudprovider"
 	_ "k8s.io/kubernetes/pkg/cloudprovider/providers"
 	_ "k8s.io/kubernetes/pkg/version/prometheus" // for version metric registration
+	"net"
+	"time"
+	"k8s.io/apimachinery/pkg/util/wait"
+	"github.com/appscode/log"
 )
 
 func init() {
@@ -27,6 +31,14 @@ func NewCmdUp() *cobra.Command {
 		Short:             "Bootstrap as a Kubernetes master or node",
 		DisableAutoGenTag: true,
 		Run: func(cmd *cobra.Command, args []string) {
+			err := wait.Poll(3*time.Second, 5*time.Minute, func() (bool, error) {
+				addr,err := net.LookupIP("google.com")
+				return len(addr)>0, err
+			})
+			if err != nil {
+				log.Fatalln("Failed to resolve DNS. Reason: %v",err)
+			}
+
 			cloud, err := cloudprovider.InitCloudProvider(digitalocean.ProviderName, s.CloudConfigFile)
 			fmt.Println(s.CloudConfigFile, "----")
 			if err != nil {
