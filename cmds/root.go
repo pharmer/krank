@@ -25,6 +25,7 @@ func NewRootCmd() *cobra.Command {
 	flag.CommandLine.Parse([]string{})
 
 	rootCmd.AddCommand(NewCmdUp())
+	rootCmd.AddCommand(NewCmdDebug())
 	rootCmd.AddCommand(v.NewCmdVersion())
 
 	return rootCmd
