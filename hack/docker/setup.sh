@@ -38,7 +38,7 @@ build_binary() {
 
 build_docker() {
     pushd $GOPATH/src/github.com/appscode/krank/hack/docker
-    cp $DIST/krank/krank-linux-amd64 krank
+    cp $DIST/krank/krank-alpine-amd64 krank
     chmod 755 krank
 
     cat >Dockerfile <<EOL
