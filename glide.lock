@@ -1,5 +1,5 @@
 hash: 6392de309efad033743cf22e32ffb853c9040b4077cde2eabdd2485fbe183402
-updated: 2017-08-22T07:32:51.820191983-07:00
+updated: 2017-08-23T23:06:59.855881249-07:00
 imports:
 - name: cloud.google.com/go
   version: fe3d41e1ecb2ce36ad3a979037c9b9a2b726226f
@@ -21,6 +21,7 @@ imports:
   - encoding/json/types
   - env
   - flags
+  - hold
   - net
   - net/httpclient
   - os/repos
@@ -34,7 +35,7 @@ imports:
   subpackages:
   - golog
 - name: github.com/appscode/pharmer
-  version: 4d82441e7b34bfbfa69468b11d4fefa133a12c2c
+  version: cce1615e21040ee8c34535266e2f5a7d397b29bb
   subpackages:
   - api
 - name: github.com/aws/aws-sdk-go
@@ -270,6 +271,12 @@ imports:
   - upid
 - name: github.com/mgutz/str
   version: 968bf66e3da857419e4f6e71b2d5c9ae95682dc4
+- name: github.com/mikespook/golib
+  version: 38fe6917d34b267a79c3432369e7dcc379e2d5b3
+  subpackages:
+  - autoinc
+  - idgen
+  - signal
 - name: github.com/mitchellh/mapstructure
   version: 53818660ed4955e899c0bcafa97299a388bd7c8e
 - name: github.com/pkg/errors
@@ -335,7 +342,7 @@ imports:
 - name: github.com/shurcooL/sanitized_anchor_name
   version: 10ef21a441db47d8b13ebcc5fd2310f636973c77
 - name: github.com/spf13/cobra
-  version: 4a7b7e65864c064d48dce82efbbfed2bdc0bf2aa
+  version: 2df9a531813370438a4d79bfc33e21f58063ed87
   subpackages:
   - doc
 - name: github.com/spf13/pflag
@@ -481,6 +488,11 @@ imports:
   - types
 - name: gopkg.in/inf.v0
   version: 3887ee99ecf07df5b447e9b00d9c0b2adaa9f3e4
+- name: gopkg.in/mgo.v2
+  version: 3f83fa5005286a7fe593b055f0d7771a7dce4655
+  subpackages:
+  - bson
+  - internal/json
 - name: gopkg.in/warnings.v0
   version: 8a331561fe74dadba6edfc59f3be66c22c3b065d
 - name: gopkg.in/yaml.v2
@@ -546,8 +558,6 @@ imports:
   - pkg/features
   - pkg/server/healthz
   - pkg/util/feature
-  - pkg/util/flag
-  - pkg/util/logs
 - name: k8s.io/client-go
   version: d92e8497f71b7b4e0494e5bd204b48d34bd6f254
   subpackages:
@@ -800,7 +810,6 @@ imports:
   - pkg/util/version
   - pkg/version
   - pkg/version/prometheus
-  - pkg/version/verflag
   - pkg/volume
   - pkg/volume/util
   - plugin/pkg/scheduler/algorithm
