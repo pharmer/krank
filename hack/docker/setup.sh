@@ -45,14 +45,13 @@ build_docker() {
 FROM alpine
 
 RUN set -x \
-  && apk add --update --no-cache ca-certificates
+  && apk add --update --no-cache ca-certificates curl
 
 COPY krank /usr/bin/krank
 
-USER nobody:nobody
 ENTRYPOINT ["krank"]
 EOL
-    local cmd="docker build -t appscode/$IMG:$TAG ."
+    local cmd="sudo docker build -t appscode/$IMG:$TAG ."
     echo $cmd; $cmd
 
     rm krank Dockerfile

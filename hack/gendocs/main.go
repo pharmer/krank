@@ -5,14 +5,14 @@ import (
 	"log"
 	"os"
 
-	"github.com/appscode/krank/cmds"
 	"github.com/appscode/go/runtime"
+	"github.com/appscode/krank/cmds"
 	"github.com/spf13/cobra/doc"
 )
 
 // ref: https://github.com/spf13/cobra/blob/master/doc/md_docs.md
 func main() {
-	rootCmd := cmds.NewCmdStartup()
+	rootCmd := cmds.NewRootCmd()
 	dir := runtime.GOPath() + "/src/github.com/appscode/krank/docs/reference"
 	fmt.Printf("Generating cli markdown tree in: %v\n", dir)
 	err := os.MkdirAll(dir, 0755)
